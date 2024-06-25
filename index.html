@@ -1,0 +1,179 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Demo for "Generating Data with Text-to-Speech and Large-Language Models for Conversational Speech Recognition".</title>
+      <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+      <!-- <link rel="shortcut icon" href="../../images/taco.png"> -->
+      <script>
+         function play(path) {{
+           var player = document.getElementById('player');
+           player.src = path;
+           player.play();
+         }}
+      </script>
+      <style>
+         .audio-cell {
+         /* Center audio widgets in the table cell. */
+         text-align: center;
+         padding-bottom: 1px;
+         padding-top: 1px;
+         }
+         .audio-cell-padded {
+         text-align: center;
+         padding-bottom: 10px;
+         padding-top: 10px;
+         }
+         .audio-header {
+         /* Don't wrap header text. */
+         white-space: nowrap;
+         /* Some breaking space between headers for readability. */
+         padding-right: 5px;
+         padding-left: 5px;
+         }
+         .reference-cell {
+         /* For uniformity and to wrap long reference text, limit the reference cell's width. */
+         width: 25%;
+         padding-top: 20px;
+         padding-bottom: 20px;
+         }
+         .sample audio {
+         vertical-align: middle;
+         padding-left: 3px;
+         padding-right: 3px;
+         }
+         .round-button {
+         box-sizing: border-box;
+         display:block;
+         width:30px;
+         height:30px;
+         padding-top: 8px;
+         padding-left: 3px;
+         line-height: 6px;
+         border: 1.2px solid #000;
+         border-radius: 50%;
+         color: #000;
+         text-align:center;
+         background-color: rgba(0,0,0,0.00);
+         font-size:6px;
+         box-shadow: 0px 0px 2px rgba(0,0,0,1);
+         transition: all 0.2s ease;
+         }
+         .round-button:hover {
+         background-color: rgba(0,0,0,0.0);
+         box-shadow: 0px 0px 4px rgba(0,0,0,1);
+         }
+         .round-button:active {
+         background-color: rgba(0,0,0,0.01);
+         box-shadow: 0px 0px 1px rgba(0,0,0,1);
+         }
+      </style>
+   </head>
+
+   <body>
+     <div class="main">
+       <article>
+         <header>
+            <h1>Generating Data with Text-to-Speech and Large-Language Models for Conversational Speech Recognition [<a href="">pre-print link</a>]</h1>
+         </header>
+      </article>
+      <div>
+      </div>
+
+      <p><b>Abstract:</b>
+      Currently, a common approach in many speech processing fields is to leverage large scale pre-trained models by fine-tuning them on in-domain data for a particular application.
+Yet obtaining even a small amount of such data could be problematic especially for sensitive domains and conversational speech scenarios, due both to privacy issues and annotation costs. To address this, synthetic data generation has been employed, yet, for multi-speaker cases, it often requires extensive manual effort and is prone to domain mismatches.
+In this work, we propose a synthetic data generation pipeline for multi-speaker conversational ASR, leveraging a large language model (LLM) for content creation and a conversational multi-speaker text-to-speech (TTS) model for speech synthesis. We conduct evaluation by fine-tuning the Whisper ASR model for telephone and distant conversational speech settings, using both in-domain data and generated synthetic data.
+Results show that the proposed method is able to significantly outperform classical multi-speaker generation approaches that use external non-conversational speech datasets and, at least for the scenarios considered, can even be a valid alternative to using in-domain data, when this latter is limited to few hours.
+      </p>
+
+
+  <h2 id="#llm_generated">Llama-3 generated 2 speakers conversations.</h2>
+
+
+  <a href="#ex1">Sample 1</a><br>
+  <a href="#ex2">Sample 2</a><br>
+   <a href="#ex3">Sample 3</a><br>
+   <br />
+    <b>NOTE: Additional Parakeet TTS examples are available at <a href="https://jordandarefsky.com/blog/2024/parakeet/">jordandarefsky.com</a></b>
+
+
+      <h3 id="ex3">Sample 1</h3>
+   <br />
+  <td align="left">
+  <b>Generated transcript</b>: [S1] I'm like, "What's going on?" [S2] Yeah, like, we're sitting there, and you're like, "What's going on?" And I'm like, "I don't know, man. I think we're just...I don't know. Like, what are we doing, man?" [S1] Yeah, like, we're just...we're just sitting there, man.
+
+  <br />
+  <br />
+  <br />
+  <table style="width:100%">
+    <tr>
+        <td align="left">
+		TTS Model: <b>xTTS-v2 (speakers IDs are cloned from LibriSpeech)</b><br />
+        <p style="text-align: left">
+          <audio controls=""><source src="examples/xTTS/sample_3.wav"></audio>
+        </td>
+    <tr>
+          TTS Model: <b>Parakeet</b><br />
+          <p style="text-align: left">
+          <audio controls=""><source src="examples/Parakeet/sample_3.wav"></audio>
+        </td>
+    </tr>
+  </table>
+
+
+<h3 id="ex2">Sample 2</h3>
+   <br />
+  <td align="left">
+  <b>Generated transcript</b>: [S1] I don't think we're going to get a deal that we like. [S2] Yeah. [S1] I think we're going to have to make a decision based on the information we have, and I think that's what we're going to have to do. [S2] Yeah.
+  <br />
+  <br />
+  <br />
+  <table style="width:100%">
+    <tr>
+        <td align="left">
+		TTS Model: <b>xTTS-v2 (speakers IDs are cloned from LibriSpeech)</b><br />
+        <p style="text-align: left">
+          <audio controls=""><source src="examples/xTTS/sample_2.wav"></audio>
+        </td>
+    <tr>
+          TTS Model: <b>Parakeet</b><br />
+          <p style="text-align: left">
+          <audio controls=""><source src="examples/Parakeet/sample_2.wav"></audio>
+        </td>
+    </tr>
+  </table>
+
+
+  <h3 id="ex1">Sample 3</h3>
+   <br />
+  <td align="left">
+  <b>Generated transcript</b>: [S1] And I'm thinking, like, what are the chances that he's actually gonna go through with this? [S2] Right? It's like, come on, dude. You're a adult now. Act like one. [S1] Yeah, exactly. And she's like, "Oh, you're gonna do what? Go out there and get a job?" [S2] Yeah, basically.
+  <br />
+  <br />
+  <br />
+  <table style="width:100%">
+    <tr>
+        <td align="left">
+		TTS Model: <b>xTTS-v2 (speakers IDs are cloned from LibriSpeech)</b><br />
+        <p style="text-align: left">
+          <audio controls=""><source src="examples/xTTS/sample_1.wav"></audio>
+        </td>
+    <tr>
+          TTS Model: <b>Parakeet</b><br />
+          <p style="text-align: left">
+          <audio controls=""><source src="examples/Parakeet/sample_1.wav"></audio>
+        </td>
+    </tr>
+  </table>
+
+
+
+
+  <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+</div>
+</body>
+</html>
